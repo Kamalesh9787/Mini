@@ -394,7 +394,7 @@ async def start(client:Client, message):
         file_caption=files.caption
     )
     btn = [[
-        InlineKeyboardButton("❦︎ 𝐉ᴏɪɴ 𝐎ᴜʀ 𝐀ʟʟ 𝐂ʜᴀɴɴᴇʟs ❦︎", url=f'https://t.me/tamil_mini'')
+        InlineKeyboardButton("❦︎ 𝐉ᴏɪɴ 𝐎ᴜʀ 𝐀ʟʟ 𝐂ʜᴀɴɴᴇʟs ❦︎", url=f'https://t.me/tamil_mini')
     ]]
     toDel=await client.send_cached_media(
         chat_id=message.from_user.id,
