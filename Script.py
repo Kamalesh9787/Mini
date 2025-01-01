@@ -115,7 +115,7 @@ User - {}"""
 ⭐ Rating: {rating} / 10</b>
 """
 
-    FILE_CAPTION = """<b>{file_name}\n\n𝖩𝗈𝗂𝗇➥ 「<a href="https://t.me/Tamil_Mini">𝗧𝗮𝗺𝗶𝗹 𝗠𝗶𝗻𝗶</a>」</b>"""
+    FILE_CAPTION = """<b>{file_name}\n\n𝖩𝗈𝗂𝗇➥ 「<a href="https://t.me/Tamil_Mini">𝐓𝐀𝐌𝐈𝐋 𝐌𝐈𝐍𝐈</a>」</b>"""
     
 
     ALRT_TXT = """ᴊᴀʟᴅɪ ʏᴇʜᴀ sᴇ ʜᴀᴛᴏ !"""
@@ -266,7 +266,7 @@ User - {}"""
 ⏰ ᴄᴜꜱᴛᴏᴍɪꜱᴇᴅ ᴅᴀʏꜱ
 💸 ᴀᴄᴄᴏʀᴅɪɴɢ ᴛᴏ ᴅᴀʏꜱ ʏᴏᴜ ᴄʜᴏᴏꜱᴇ
 
-🏆 ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴀ ɴᴇᴡ ᴘʟᴀɴ ᴀᴘᴀʀᴛ ꜰʀᴏᴍ ᴛʜᴇ ɢɪᴠᴇɴ ᴘʟᴀɴ, ᴛʜᴇɴ ʏᴏᴜ ᴄᴀɴ ᴛᴀʟᴋ ᴛᴏ ᴏᴜʀ <a href='https://t.me/IM_JISSHU'>ᴏᴡɴᴇʀ</a> ᴅɪʀᴇᴄᴛʟʏ ʙʏ ᴄʟɪᴄᴋɪɴɢ ᴏɴ ᴛʜᴇ ᴄᴏɴᴛᴀᴄᴛ ʙᴜᴛᴛᴏɴ ɢɪᴠᴇɴ ʙᴇʟᴏᴡ.
+🏆 ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴀ ɴᴇᴡ ᴘʟᴀɴ ᴀᴘᴀʀᴛ ꜰʀᴏᴍ ᴛʜᴇ ɢɪᴠᴇɴ ᴘʟᴀɴ, ᴛʜᴇɴ ʏᴏᴜ ᴄᴀɴ ᴛᴀʟᴋ ᴛᴏ ᴏᴜʀ <a href='https://t.me/Itzz_introvert'>ᴏᴡɴᴇʀ</a> ᴅɪʀᴇᴄᴛʟʏ ʙʏ ᴄʟɪᴄᴋɪɴɢ ᴏɴ ᴛʜᴇ ᴄᴏɴᴛᴀᴄᴛ ʙᴜᴛᴛᴏɴ ɢɪᴠᴇɴ ʙᴇʟᴏᴡ.
     
 👨‍💻 ᴄᴏɴᴛᴀᴄᴛ ᴛʜᴇ ᴏᴡɴᴇʀ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ᴏᴛʜᴇʀ ᴘʟᴀɴ.
 
@@ -361,9 +361,9 @@ Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ᴍᴀᴋᴇ ᴍᴇ ᴀ�
 
     SOURCE_TXT = """<b>
 NOTE:
-- ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ʜᴇʀᴇ ◉› :<blockquote><a href="https://t.me/Tamil_Mini">𝗝𝗶𝘀𝘀𝗵𝘂-𝗙𝗶𝗹𝘁𝗲𝗿-𝗕𝗼𝘁</a></blockquote>
+- 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐀𝐝𝐦𝐢𝐧 𝐓𝐨 𝐆𝐞𝐭 𝐑𝐞𝐩𝐨 ◉› :<blockquote><a href="https://t.me/Tamil_Mini">𝐌𝐕 𝐅𝐢𝐥𝐭𝐞𝐫 𝐁𝐨𝐭</a></blockquote>
 
-developer : Kamalesh
+𝐴𝑑𝑚𝑖𝑛 : <a href="https://t.me/itzz_introvert">𝐊𝐀𝐌𝐀𝐋𝐄𝐒𝐇</a>
 </b>""" 
     GROUP_C_TEXT = """<b><blockquote>
  --------------Set Verify-------------
