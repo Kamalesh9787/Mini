@@ -194,7 +194,7 @@ async def start(client:Client, message):
                             InlineKeyboardButton('𝐓𝐎𝐏 𝐓𝐑𝐄𝐍𝐃𝐈𝐍𝐆 ⚡', callback_data="trending")
                         ]] 
                         reply_markup = InlineKeyboardMarkup(buttons)
-                        m=await message.reply_sticker("CAACAgQAAxkBAAEn9_ZmGp1uf1a38UrDhitnjOOqL1oG3gAC9hAAAlC74FPEm2DxqNeOmB4E") 
+                        m=await message.reply_sticker("CAACAgQAAxkBAAICVGb_v-O6ODjVGW1grUutZIKcpONlAAIdEAACa73hUcfQH70j0XuTNgQ") 
                         await asyncio.sleep(1)
                         await m.delete()
                         await message.reply_photo(photo=random.choice(START_IMG), caption=script.START_TXT.format(message.from_user.mention, get_status(), message.from_user.id),
@@ -223,7 +223,7 @@ async def start(client:Client, message):
                             InlineKeyboardButton('𝐓𝐎𝐏 𝐓𝐑𝐄𝐍𝐃𝐈𝐍𝐆 ⚡', callback_data="trending")
                         ]] 
         reply_markup = InlineKeyboardMarkup(buttons)
-        m=await message.reply_sticker("CAACAgQAAxkBAAEn9_ZmGp1uf1a38UrDhitnjOOqL1oG3gAC9hAAAlC74FPEm2DxqNeOmB4E") 
+        m=await message.reply_sticker("CAACAgQAAxkBAAICVGb_v-O6ODjVGW1grUutZIKcpONlAAIdEAACa73hUcfQH70j0XuTNgQ") 
         await asyncio.sleep(1)
         await m.delete()
         await message.reply_photo(photo=random.choice(START_IMG), caption=script.START_TXT.format(message.from_user.mention, get_status(), message.from_user.id),
@@ -315,10 +315,10 @@ async def start(client:Client, message):
             else:
                 howtodownload = settings.get('tutorial_2', TUTORIAL_2) if is_second_shortener else settings.get('tutorial', TUTORIAL)
             buttons = [[
-                InlineKeyboardButton(text="✅ ᴠᴇʀɪғʏ ✅", url=verify),
-                InlineKeyboardButton(text="ʜᴏᴡ ᴛᴏ ᴠᴇʀɪғʏ❓", url=howtodownload)
+                InlineKeyboardButton(text="✅ 𝖵𝖾𝗋𝗂𝖿𝗒 ✅", url=verify),
+                InlineKeyboardButton(text="𝖧𝗈𝗐 𝖳𝗈 𝖵𝖾𝗋𝗂𝖿𝗒❓", url=howtodownload)
                 ],[
-                InlineKeyboardButton(text="😁 ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ - ɴᴏ ɴᴇᴇᴅ ᴛᴏ ᴠᴇʀɪғʏ 😁", callback_data='seeplans'),
+                InlineKeyboardButton(text="😁 𝖡𝗎𝗒 𝖲𝗎𝖻𝗌𝖼𝗋𝗂𝗉𝗍𝗂𝗈𝗇 - 𝖭𝗈 𝖭𝖾𝖾𝖽 𝖳𝗈 𝖵𝖾𝗋𝗂𝖿𝗒� 😁", callback_data='seeplans'),
             ]]
             reply_markup=InlineKeyboardMarkup(buttons)
             if await db.user_verified(user_id): 
@@ -340,7 +340,7 @@ async def start(client:Client, message):
         _, key = data.split("_", 1)
         files = temp.FILES_ID.get(key)
         if not files:
-            await message.reply_text("<b>⚠️ ᴀʟʟ ꜰɪʟᴇs ɴᴏᴛ ꜰᴏᴜɴᴅ ⚠️</b>")
+            await message.reply_text("<b>⚠️ 𝖠𝗅𝗅 𝖥𝗂𝗅𝖾𝗌 𝖭𝗈𝗍 𝖥𝗈𝗎𝗇𝖽 ⚠️</b>")
             return
         files_to_delete = []
         for file in files:
@@ -354,7 +354,7 @@ async def start(client:Client, message):
                 file_caption=file.caption
             )
             btn = [[
-                InlineKeyboardButton("✛ ᴡᴀᴛᴄʜ & ᴅᴏᴡɴʟᴏᴀᴅ ✛", callback_data=f'stream#{file.file_id}')
+                InlineKeyboardButton("❦︎ 𝐉ᴏɪɴ 𝐎ᴜʀ 𝐀ʟʟ 𝐂ʜᴀɴɴᴇʟs ❦︎", url=f'https://t.me/tamil_mini')
             ]]
             toDel = await client.send_cached_media(
                 chat_id=message.from_user.id,
@@ -384,7 +384,7 @@ async def start(client:Client, message):
     files_ = await get_file_details(file_id)           
     if not files_:
         pre, file_id = ((base64.urlsafe_b64decode(data + "=" * (-len(data) % 4))).decode("ascii")).split("_", 1)
-        return await message.reply('<b>⚠️ ᴀʟʟ ꜰɪʟᴇs ɴᴏᴛ ꜰᴏᴜɴᴅ ⚠️</b>')
+        return await message.reply('<b>⚠️ 𝖠𝗅𝗅 𝖥𝗂𝗅𝖾𝗌 𝖭𝗈𝗍 𝖥𝗈𝗎𝗇𝖽 ⚠️</b>')
     files = files_[0]
     settings = await get_settings(grp_id , pm_mode=pm_mode)
     CAPTION = settings['caption']
@@ -394,7 +394,7 @@ async def start(client:Client, message):
         file_caption=files.caption
     )
     btn = [[
-        InlineKeyboardButton("✛ ᴡᴀᴛᴄʜ & ᴅᴏᴡɴʟᴏᴀᴅ ✛", callback_data=f'stream#{file_id}')
+        InlineKeyboardButton("❦︎ 𝐉ᴏɪɴ 𝐎ᴜʀ 𝐀ʟʟ 𝐂ʜᴀɴɴᴇʟs ❦︎", url=f'https://t.me/tamil_mini'')
     ]]
     toDel=await client.send_cached_media(
         chat_id=message.from_user.id,
