@@ -58,7 +58,7 @@ async def start(client:Client, message):
         settings = await get_settings(grp_id)         
         verify_id_info = await db.get_verify_id_info(user_id, verify_id)
         if not verify_id_info or verify_id_info["verified"]:
-            await message.reply("<b>ʟɪɴᴋ ᴇxᴘɪʀᴇᴅ 𝐓𝐑𝐘 𝐀𝐆𝐀𝐈𝐍...</b>")
+            await message.reply("<b>ʟɪɴᴋ ᴇxᴘɪʀᴇᴅ ᴛʀʏ ᴀɢᴀɪɴ...</b>")
             return  
         ist_timezone = pytz.timezone('Asia/Kolkata')
         if await db.user_verified(user_id):
@@ -88,7 +88,7 @@ async def start(client:Client, message):
             parse_mode=enums.ParseMode.HTML
         )
         return 
-        # 𝐑ᴇғᴇʀ 
+        # refer 
     if len(message.command) == 2 and message.command[1].startswith("reff_"):
         try:
             user_id = int(message.command[1].split("_")[1])
@@ -98,7 +98,7 @@ async def start(client:Client, message):
         if user_id == message.from_user.id:
             await message.reply_text("Hᴇʏ ᴅᴜᴅᴇ, ʏᴏᴜ ᴄᴀɴ ɴᴏᴛ ʀᴇғᴇʀ ʏᴏᴜʀsᴇʟғ⁉️")
             return
-        if 𝐑ᴇғᴇʀdb.is_user_in_list(message.from_user.id):
+        if referdb.is_user_in_list(message.from_user.id):
             await message.reply_text("‼️ Yᴏᴜ ʜᴀᴠᴇ ʙᴇᴇɴ ᴀʟʀᴇᴀᴅʏ ɪɴᴠɪᴛᴇᴅ ᴏʀ ᴊᴏɪɴᴇᴅ")
             return
         if await db.is_user_exist(message.from_user.id): 
@@ -108,15 +108,15 @@ async def start(client:Client, message):
             uss = await client.get_users(user_id)
         except Exception:
             return
-        𝐑ᴇғᴇʀdb.add_user(message.from_user.id)
-        fromuse = 𝐑ᴇғᴇʀdb.get_𝐑ᴇғᴇʀ_points(user_id) + 10
+        referdb.add_user(message.from_user.id)
+        fromuse = referdb.get_refer_points(user_id) + 10
         if fromuse == 100:
-            𝐑ᴇғᴇʀdb.add_𝐑ᴇғᴇʀ_points(user_id, 0) 
+            referdb.add_refer_points(user_id, 0) 
             await message.reply_text(f"𝙔𝙤𝙪 𝙝𝙖𝙫𝙚 𝙗𝙚𝙚𝙣 𝙨𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮 𝙞𝙣𝙫𝙞𝙩𝙚𝙙 𝙗𝙮 {uss.mention}!") 
             await client.send_message(user_id, text=f"𝙔𝙤𝙪 𝙝𝙖𝙫𝙚 𝙗𝙚𝙚𝙣 𝙨𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮 𝙞𝙣𝙫𝙞𝙩𝙚𝙙 𝙗𝙮 {message.from_user.mention}!") 
-            await add_𝐏ʀᴇᴍɪᴜᴍ(client, user_id, uss)
+            await add_premium(client, user_id, uss)
         else:
-            𝐑ᴇғᴇʀdb.add_𝐑ᴇғᴇʀ_points(user_id, fromuse)
+            referdb.add_refer_points(user_id, fromuse)
             await message.reply_text(f"𝙔𝙤𝙪 𝙝𝙖𝙫𝙚 𝙗𝙚𝙚𝙣 𝙨𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮 𝙞𝙣𝙫𝙞𝙩𝙚𝙙 𝙗𝙮 {uss.mention}!")
             await client.send_message(user_id, f"𝙔𝙤𝙪 𝙝𝙖𝙫𝙚 𝙨𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮 𝙞𝙣𝙫𝙞𝙩𝙚𝙙 {message.from_user.mention}!")
         return
@@ -182,19 +182,19 @@ async def start(client:Client, message):
          #       newPoint = await db.get_point(refUserId)
              if AUTH_CHANNEL and await is_req_subscribed(client, message):
                         buttons = [[
-                            InlineKeyboardButton('☆ 𝐀ᴅᴅ 𝐌ᴇ 𝐓ᴏ 𝐘ᴏᴜʀ 𝐆ʀᴏᴜᴘ� ☆', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
+                            InlineKeyboardButton('☆ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ☆', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
                         ],[
-                            InlineKeyboardButton("𝐇ᴇʟᴘ ⚙️", callback_data='features'),
-                            InlineKeyboardButton('𝐀ʙᴏᴜᴛ� 💌', callback_data=f'𝐀ʙᴏᴜᴛ')
+                            InlineKeyboardButton("Hᴇʟᴘ ⚙️", callback_data='features'),
+                            InlineKeyboardButton('Aʙᴏᴜᴛ 💌', callback_data=f'about')
                         ],[
-                            InlineKeyboardButton('𝐏ʀᴇᴍɪᴜᴍ� 🎫', callback_data='seeplans'),
-                            InlineKeyboardButton('𝐑ᴇғᴇʀ� ⚜️', callback_data="reffff")
+                            InlineKeyboardButton('Pʀᴇᴍɪᴜᴍ 🎫', callback_data='seeplans'),
+                            InlineKeyboardButton('Rᴇғᴇʀ ⚜️', callback_data="reffff")
                         ],[
-                            InlineKeyboardButton('𝐌ᴏsᴛ 𝐒ᴇᴀʀᴄʜ� 🔍', callback_data="mostsearch"),
-                            InlineKeyboardButton('𝐓ᴏᴘ 𝐓ʀᴇɴᴅɪɴɢ� ⚡', callback_data="trending")
+                            InlineKeyboardButton('Mᴏsᴛ Sᴇᴀʀᴄʜ 🔍', callback_data="mostsearch"),
+                            InlineKeyboardButton('Tᴏᴘ Tʀᴇɴᴅɪɴɢ ⚡', callback_data="trending")
                         ]] 
                         reply_markup = InlineKeyboardMarkup(buttons)
-                        m=await message.reply_sticker("CAACAgQAAxkBAAICVGb_v-O6ODjVGW1grUutZIKcpONlAAIdEAACa73hUcfQH70j0XuTNgQ") 
+                        m=await message.reply_sticker("CAACAgQAAxkBAAEn9_ZmGp1uf1a38UrDhitnjOOqL1oG3gAC9hAAAlC74FPEm2DxqNeOmB4E") 
                         await asyncio.sleep(1)
                         await m.delete()
                         await message.reply_photo(photo=random.choice(START_IMG), caption=script.START_TXT.format(message.from_user.mention, get_status(), message.from_user.id),
@@ -202,7 +202,7 @@ async def start(client:Client, message):
                             parse_mode=enums.ParseMode.HTML)
           #      try: 
           #          if newPoint == 0:
-          #              await client.send_message(refUserId , script.REF_PREMEUM.format(𝐏ʀᴇᴍɪᴜᴍ_POINT))
+          #              await client.send_message(refUserId , script.REF_PREMEUM.format(PREMIUM_POINT))
           #          else: 
           #              await client.send_message(refUserId , script.REF_START.format(message.from_user.mention() , newPoint))
           #      except : pass
@@ -211,19 +211,19 @@ async def start(client:Client, message):
             pass
     if len(message.command) != 2:
         buttons = [[
-                            InlineKeyboardButton('☆ 𝐀ᴅᴅ 𝐌ᴇ 𝐓ᴏ 𝐘ᴏᴜʀ 𝐆ʀᴏᴜᴘ� ☆', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
+                            InlineKeyboardButton('☆ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ☆', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
                         ],[
-                            InlineKeyboardButton("𝐇ᴇʟᴘ� ⚙️", callback_data='features'),
-                            InlineKeyboardButton('𝐀ʙᴏᴜᴛ� 💌', callback_data=f'𝐀ʙᴏᴜᴛ')
+                            InlineKeyboardButton("Hᴇʟᴘ ⚙️", callback_data='features'),
+                            InlineKeyboardButton('Aʙᴏᴜᴛ 💌', callback_data=f'about')
                         ],[
-                            InlineKeyboardButton('𝐏ʀᴇᴍɪᴜᴍ� 🎫', callback_data='seeplans'),
-                            InlineKeyboardButton('𝐑ᴇғᴇʀ� ⚜️', callback_data="reffff")
+                            InlineKeyboardButton('Pʀᴇᴍɪᴜᴍ 🎫', callback_data='seeplans'),
+                            InlineKeyboardButton('Rᴇғᴇʀ ⚜️', callback_data="reffff")
                         ],[
-                            InlineKeyboardButton('𝐌ᴏsᴛ 𝐒ᴇᴀʀᴄʜ� 🔍', callback_data="mostsearch"),
-                            InlineKeyboardButton('𝐓ᴏᴘ 𝐓ʀᴇɴᴅɪɴɢ� ⚡', callback_data="trending")
+                            InlineKeyboardButton('Mᴏsᴛ Sᴇᴀʀᴄʜ 🔍', callback_data="mostsearch"),
+                            InlineKeyboardButton('Tᴏᴘ Tʀᴇɴᴅɪɴɢ ⚡', callback_data="trending")
                         ]] 
         reply_markup = InlineKeyboardMarkup(buttons)
-        m=await message.reply_sticker("CAACAgQAAxkBAAICVGb_v-O6ODjVGW1grUutZIKcpONlAAIdEAACa73hUcfQH70j0XuTNgQ") 
+        m=await message.reply_sticker("CAACAgQAAxkBAAEn9_ZmGp1uf1a38UrDhitnjOOqL1oG3gAC9hAAAlC74FPEm2DxqNeOmB4E") 
         await asyncio.sleep(1)
         await m.delete()
         await message.reply_photo(photo=random.choice(START_IMG), caption=script.START_TXT.format(message.from_user.mention, get_status(), message.from_user.id),
@@ -238,7 +238,7 @@ async def start(client:Client, message):
             logger.error("Make Sure Bot Is Admin In Forcesub Channel")
             return
         btn = [[
-            InlineKeyboardButton("🎗️ 𝐉𝐎𝐈𝐍 𝐍𝐎𝐖 🎗️", url=invite_link.invite_link)
+            InlineKeyboardButton("🎗️ ᴊᴏɪɴ ɴᴏᴡ 🎗️", url=invite_link.invite_link)
         ]]
 
         if message.command[1] != "subscribe":
@@ -248,12 +248,12 @@ async def start(client:Client, message):
                 kk, grp_id, file_id = chksub_data.split('_', 2)
                 pre = 'checksubp' if kk == 'filep' else 'checksub'
                 btn.append(
-                    [InlineKeyboardButton("♻️ 𝐓𝐑𝐘 𝐀𝐆𝐀𝐈𝐍 ♻️", callback_data=f"checksub#{file_id}#{int(grp_id)}")]
+                    [InlineKeyboardButton("♻️ ᴛʀʏ ᴀɢᴀɪɴ ♻️", callback_data=f"checksub#{file_id}#{int(grp_id)}")]
                 )
             except (IndexError, ValueError):
                 print('IndexError: ', IndexError)
                 btn.append(
-                    [InlineKeyboardButton("♻️ 𝐓𝐑𝐘 𝐀𝐆𝐀𝐈𝐍 ♻️", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")]
+                    [InlineKeyboardButton("♻️ ᴛʀʏ ᴀɢᴀɪɴ ♻️", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")]
                 )
         reply_markup=InlineKeyboardMarkup(btn)
         await client.send_photo(
@@ -265,24 +265,24 @@ async def start(client:Client, message):
         )
        # await client.send_message(
        #     chat_id=message.from_user.id,
-       #     text="<b>🙁 ғɪʀꜱᴛ ᴊᴏɪɴ ᴏᴜʀ ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ ᴛʜᴇɴ ʏᴏᴜ ᴡɪʟʟ ɢᴇᴛ ᴍᴏᴠɪᴇ, ᴏᴛʜᴇʀᴡɪꜱᴇ ʏᴏᴜ ᴡɪʟʟ ɴᴏᴛ ɢᴇᴛ ɪᴛ.\n\nᴄʟɪᴄᴋ 𝐉𝐎𝐈𝐍 𝐍𝐎𝐖 ʙᴜᴛᴛᴏɴ 👇</b>",
+       #     text="<b>🙁 ғɪʀꜱᴛ ᴊᴏɪɴ ᴏᴜʀ ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ ᴛʜᴇɴ ʏᴏᴜ ᴡɪʟʟ ɢᴇᴛ ᴍᴏᴠɪᴇ, ᴏᴛʜᴇʀᴡɪꜱᴇ ʏᴏᴜ ᴡɪʟʟ ɴᴏᴛ ɢᴇᴛ ɪᴛ.\n\nᴄʟɪᴄᴋ ᴊᴏɪɴ ɴᴏᴡ ʙᴜᴛᴛᴏɴ 👇</b>",
        #     reply_markup=InlineKeyboardMarkup(btn),
        #     parse_mode=enums.ParseMode.HTML
     #    )
         return
 
-    if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "𝐇ᴇʟᴘ"]:
+    if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton('☆ 𝐀ᴅᴅ 𝐌ᴇ 𝐓ᴏ 𝐘ᴏᴜʀ 𝐆ʀᴏᴜᴘ� ☆', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
+            InlineKeyboardButton('☆ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ☆', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
                         ],[
-                            InlineKeyboardButton("𝐇ᴇʟᴘ� ⚙️", callback_data='features'),
-                            InlineKeyboardButton('𝐀ʙᴏᴜᴛ� 💌', callback_data=f'𝐀ʙᴏᴜᴛ')
+                            InlineKeyboardButton("Hᴇʟᴘ ⚙️", callback_data='features'),
+                            InlineKeyboardButton('Aʙᴏᴜᴛ 💌', callback_data=f'about')
                         ],[
-                            InlineKeyboardButton('𝐏ʀᴇᴍɪᴜᴍ� 🎫', callback_data='seeplans'),
-                            InlineKeyboardButton('𝐑ᴇғᴇʀ� ⚜️', callback_data="reffff")
+                            InlineKeyboardButton('Pʀᴇᴍɪᴜᴍ 🎫', callback_data='seeplans'),
+                            InlineKeyboardButton('Rᴇғᴇʀ ⚜️', callback_data="reffff")
                         ],[
-                            InlineKeyboardButton('𝐌ᴏsᴛ 𝐒ᴇᴀʀᴄʜ� 🔍', callback_data="mostsearch"),
-                            InlineKeyboardButton('𝐓ᴏᴘ 𝐓ʀᴇɴᴅɪɴɢ� ⚡', callback_data="trending")
+                            InlineKeyboardButton('Mᴏsᴛ Sᴇᴀʀᴄʜ 🔍', callback_data="mostsearch"),
+                            InlineKeyboardButton('Tᴏᴘ Tʀᴇɴᴅɪɴɢ ⚡', callback_data="trending")
                         ]] 
         reply_markup = InlineKeyboardMarkup(buttons)
         return await message.reply_photo(photo=START_IMG, caption=script.START_TXT.format(message.from_user.mention, get_status(), message.from_user.id),
@@ -299,7 +299,7 @@ async def start(client:Client, message):
         pre, grp_id, file_id = "", 0, data
 
     user_id = m.from_user.id
-    if not await db.has_𝐏ʀᴇᴍɪᴜᴍ_access(user_id):
+    if not await db.has_premium_access(user_id):
         grp_id = int(grp_id)
         user_verified = await db.is_user_verified(user_id)
         settings = await get_settings(grp_id , pm_mode=pm_mode)
@@ -315,10 +315,10 @@ async def start(client:Client, message):
             else:
                 howtodownload = settings.get('tutorial_2', TUTORIAL_2) if is_second_shortener else settings.get('tutorial', TUTORIAL)
             buttons = [[
-                InlineKeyboardButton(text="✅ 𝖵𝖾𝗋𝗂𝖿𝗒 ✅", url=verify),
-                InlineKeyboardButton(text="𝖧𝗈𝗐 𝖳𝗈 𝖵𝖾𝗋𝗂𝖿𝗒❓", url=howtodownload)
+                InlineKeyboardButton(text="✅ ᴠᴇʀɪғʏ ✅", url=verify),
+                InlineKeyboardButton(text="ʜᴏᴡ ᴛᴏ ᴠᴇʀɪғʏ❓", url=howtodownload)
                 ],[
-                InlineKeyboardButton(text="😁 𝖡𝗎𝗒 𝖲𝗎𝖻𝗌𝖼𝗋𝗂𝗉𝗍𝗂𝗈𝗇 - 𝖭𝗈 𝖭𝖾𝖾𝖽 𝖳𝗈 𝖵𝖾𝗋𝗂𝖿𝗒� 😁", callback_data='seeplans'),
+                InlineKeyboardButton(text="😁 ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ - ɴᴏ ɴᴇᴇᴅ ᴛᴏ ᴠᴇʀɪғʏ 😁", callback_data='seeplans'),
             ]]
             reply_markup=InlineKeyboardMarkup(buttons)
             if await db.user_verified(user_id): 
@@ -340,7 +340,7 @@ async def start(client:Client, message):
         _, key = data.split("_", 1)
         files = temp.FILES_ID.get(key)
         if not files:
-            await message.reply_text("<b>⚠️ 𝖠𝗅𝗅 𝖥𝗂𝗅𝖾𝗌 𝖭𝗈𝗍 𝖥𝗈𝗎𝗇𝖽 ⚠️</b>")
+            await message.reply_text("<b>⚠️ ᴀʟʟ ꜰɪʟᴇs ɴᴏᴛ ꜰᴏᴜɴᴅ ⚠️</b>")
             return
         files_to_delete = []
         for file in files:
@@ -354,7 +354,7 @@ async def start(client:Client, message):
                 file_caption=file.caption
             )
             btn = [[
-                InlineKeyboardButton("❦︎ 𝐉ᴏɪɴ 𝐎ᴜʀ 𝐀ʟʟ 𝐂ʜᴀɴɴᴇʟs ❦︎", url=f'https://t.me/tamil_mini')
+                InlineKeyboardButton("✛ ᴡᴀᴛᴄʜ & ᴅᴏᴡɴʟᴏᴀᴅ ✛", callback_data=f'stream#{file.file_id}')
             ]]
             toDel = await client.send_cached_media(
                 chat_id=message.from_user.id,
@@ -384,7 +384,7 @@ async def start(client:Client, message):
     files_ = await get_file_details(file_id)           
     if not files_:
         pre, file_id = ((base64.urlsafe_b64decode(data + "=" * (-len(data) % 4))).decode("ascii")).split("_", 1)
-        return await message.reply('<b>⚠️ 𝖠𝗅𝗅 𝖥𝗂𝗅𝖾𝗌 𝖭𝗈𝗍 𝖥𝗈𝗎𝗇𝖽 ⚠️</b>')
+        return await message.reply('<b>⚠️ ᴀʟʟ ꜰɪʟᴇs ɴᴏᴛ ꜰᴏᴜɴᴅ ⚠️</b>')
     files = files_[0]
     settings = await get_settings(grp_id , pm_mode=pm_mode)
     CAPTION = settings['caption']
@@ -394,7 +394,7 @@ async def start(client:Client, message):
         file_caption=files.caption
     )
     btn = [[
-        InlineKeyboardButton("❦︎ 𝐉ᴏɪɴ 𝐎ᴜʀ 𝐀ʟʟ 𝐂ʜᴀɴɴᴇʟs ❦︎", url=f'https://t.me/tamil_mini')
+        InlineKeyboardButton("✛ ᴡᴀᴛᴄʜ & ᴅᴏᴡɴʟᴏᴀᴅ ✛", callback_data=f'stream#{file_id}')
     ]]
     toDel=await client.send_cached_media(
         chat_id=message.from_user.id,
@@ -987,7 +987,7 @@ async def most(client, callback_query):
         keyboard, 
         one_time_keyboard=True, 
         resize_keyboard=True, 
-        placeholder="𝐌ᴏsᴛ 𝐒ᴇᴀʀᴄʜes of the day"
+        placeholder="Most searches of the day"
     )
     
     await callback_query.message.reply_text("<b>Hᴇʀᴇ ɪꜱ ᴛʜᴇ ᴍᴏꜱᴛ ꜱᴇᴀʀᴄʜᴇꜱ ʟɪꜱᴛ 👇</b>", reply_markup=reply_markup)
@@ -1005,21 +1005,21 @@ async def top(client, query):
         buttons,
         resize_keyboard=True
     )
-    await query.message.reply("<b>Here Is The 𝐓ᴏᴘ 𝐓ʀᴇɴᴅɪɴɢ List 👇</b>", reply_markup=spika)
+    await query.message.reply("<b>Here Is The Top Trending List 👇</b>", reply_markup=spika)
     
-@Client.on_message(filters.command("𝐑ᴇғᴇʀ"))
-async def 𝐑ᴇғᴇʀ(bot, message):
+@Client.on_message(filters.command("refer"))
+async def refer(bot, message):
     btn = [[
         InlineKeyboardButton('invite link', url=f'https://telegram.me/share/url?url=https://t.me/{bot.me.username}?start=reff_{message.from_user.id}&text=Hello%21%20Experience%20a%20bot%20that%20offers%20a%20vast%20library%20of%20unlimited%20movies%20and%20series.%20%F0%9F%98%83'),
-        InlineKeyboardButton(f'⏳ {𝐑ᴇғᴇʀdb.get_𝐑ᴇғᴇʀ_points(message.from_user.id)}', callback_data='ref_point'),
+        InlineKeyboardButton(f'⏳ {referdb.get_refer_points(message.from_user.id)}', callback_data='ref_point'),
         InlineKeyboardButton('Close', callback_data='close_data')
     ]]  
     m=await message.reply_sticker("CAACAgQAAxkBAAEkt_Rl_7138tgHJdEsqSNzO5mPWioZDgACGRAAAudLcFGAbsHU3KNJUx4E")      
     await m.delete()
     reply_markup = InlineKeyboardMarkup(btn)
     await message.reply_photo(
-            photo=random.choice(𝐑ᴇғᴇʀ_PICS),
-            caption=f'👋Hay {message.from_user.mention},\n\nHᴇʀᴇ ɪꜱ ʏᴏᴜʀ ʀᴇғғᴇʀᴀʟ ʟɪɴᴋ:\nhttps://t.me/{bot.me.username}?start=reff_{message.from_user.id}\n\nShare this link with your friends, Each time they join,  you will get 10 refferal points and after 100 points you will get 1 month 𝐏ʀᴇᴍɪᴜᴍ subscription.',
+            photo=random.choice(REFER_PICS),
+            caption=f'👋Hay {message.from_user.mention},\n\nHᴇʀᴇ ɪꜱ ʏᴏᴜʀ ʀᴇғғᴇʀᴀʟ ʟɪɴᴋ:\nhttps://t.me/{bot.me.username}?start=reff_{message.from_user.id}\n\nShare this link with your friends, Each time they join,  you will get 10 refferal points and after 100 points you will get 1 month premium subscription.',
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
     )
