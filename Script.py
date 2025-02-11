@@ -124,35 +124,17 @@ User - {}"""
 
     NO_RESULT_TXT = """<b>ᴛʜɪs ᴍᴇssᴀɢᴇ ɪs ɴᴏᴛ ʀᴇʟᴇᴀsᴇᴅ ᴏʀ ᴀᴅᴅᴇᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ 🙄</b>"""
     
-    I_CUDNT = """‼️ FILE NOT FOUND  ‼️
+I_CUDNT = """🤧 𝗛𝗲𝗹𝗹𝗼 {}
 
-1️⃣ Make Sure The Movie Is Spelled Exactly As It Is In Google..!!
+𝗜 𝗰𝗼𝘂𝗹𝗱𝗻'𝘁 𝗳𝗶𝗻𝗱 𝗮𝗻𝘆 𝗺𝗼𝘃𝗶𝗲 𝗼𝗿 𝘀𝗲𝗿𝗶𝗲𝘀 𝗶𝗻 𝘁𝗵𝗮𝘁 𝗻𝗮𝗺𝗲.. 😐"""
 
-2️⃣ Check If The Movie You Requested Is Released In OTT.!!
+    I_CUD_NT = """😑 𝗛𝗲𝗹𝗹𝗼 {}
 
-3️⃣ If You Need Help Contact The Support Group Admins Will Help.
-
-4️⃣ 𝖢𝗈𝗇𝗍𝖺𝖼𝗍 𝖠𝖽𝗆𝗂𝗇𝗌, 𝖲𝗈 𝖳𝗁𝖾𝗒 𝖢𝖺𝗇 𝖠𝖽𝖽 𝖥𝗂𝗅𝖾𝗌 𝖳𝗈 𝖬𝗒 𝖣𝖺𝗍𝖺𝖻𝖺𝗌𝖾 !"""
-
-    I_CUD_NT = """‼️ FILE NOT FOUND  ‼️
-
-1️⃣ Make Sure The Movie Is Spelled Exactly As It Is In Google..!!
-
-2️⃣ Check If The Movie You Requested Is Released In OTT.!!
-
-3️⃣ If You Need Help Contact The Support Group Admins Will Help.
-
-4️⃣ 𝖢𝗈𝗇𝗍𝖺𝖼𝗍 𝖠𝖽𝗆𝗂𝗇𝗌, 𝖲𝗈 𝖳𝗁𝖾𝗒 𝖢𝖺𝗇 𝖠𝖽𝖽 𝖥𝗂𝗅𝖾𝗌 𝖳𝗈 𝖬𝗒 𝖣𝖺𝗍𝖺𝖻𝖺𝗌𝖾 !"""
+𝗜 𝗰𝗼𝘂𝗹𝗱𝗻'𝘁 𝗳𝗶𝗻𝗱 𝗮𝗻𝘆𝘁𝗵𝗶𝗻𝗴 𝗿𝗲𝗹𝗮𝘁𝗲𝗱 𝘁𝗼 𝘁𝗵𝗮𝘁 😞... 𝗰𝗵𝗲𝗰𝗸 𝘆𝗼𝘂𝗿 𝘀𝗽𝗲𝗹𝗹𝗶𝗻𝗴."""
     
-    CUDNT_FND = """‼️ FILE NOT FOUND  ‼️
+    CUDNT_FND = """🤧 𝗛𝗲𝗹𝗹𝗼 {}
 
-1️⃣ Make Sure The Movie Is Spelled Exactly As It Is In Google..!!
-
-2️⃣ Check If The Movie You Requested Is Released In OTT.!!
-
-3️⃣ If You Need Help Contact The Support Group Admins Will Help.
-
-4️⃣ 𝖢𝗈𝗇𝗍𝖺𝖼𝗍 𝖠𝖽𝗆𝗂𝗇𝗌, 𝖲𝗈 𝖳𝗁𝖾𝗒 𝖢𝖺𝗇 𝖠𝖽𝖽 𝖥𝗂𝗅𝖾𝗌 𝖳𝗈 𝖬𝗒 𝖣𝖺𝗍𝖺𝖻𝖺𝗌𝖾 !"""
+𝗜 𝗰𝗼𝘂𝗹𝗱𝗻'𝘁 𝗳𝗶𝗻𝗱 𝗮𝗻𝘆𝘁𝗵𝗶𝗻𝗴 𝗿𝗲𝗹𝗮𝘁𝗲𝗱 𝘁𝗼 𝘁𝗵𝗮𝘁 𝗱𝗶𝗱 𝘆𝗼𝘂 𝗺𝗲𝗮𝗻 𝗮𝗻𝘆 𝗼𝗻𝗲 𝗼𝗳 𝘁𝗵𝗲𝘀𝗲 ?? 👇"""
     
     FONT_TXT= """<b>ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ᴍᴏᴅᴇ ᴛᴏ ᴄʜᴀɴɢᴇ ʏᴏᴜʀ ꜰᴏɴᴛs sᴛʏʟᴇ, ᴊᴜsᴛ sᴇɴᴅ ᴍᴇ ʟɪᴋᴇ ᴛʜɪs ꜰᴏʀᴍᴀᴛ
 
